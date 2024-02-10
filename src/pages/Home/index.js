@@ -13,7 +13,8 @@ import Modal from '../../containers/Modal'
 import { useData } from '../../contexts/DataContext'
 
 const Page = () => {
-    const { last } = useData()
+    const { data } = useData()
+    const last = data?.events.pop()
 
     return (
         <>
@@ -129,8 +130,8 @@ const Page = () => {
                 <div className="col presta">
                     <h3>Notre derniére prestation</h3>
                     <EventCard
-                        imageSrc={last?.cover}
-                        title={last?.title}
+                        imageSrc={last?.cover ? last.cover : '../../logo.svg'}
+                        title={last?.title ? last.title : 'Indisponible'}
                         date={new Date(last?.date)}
                         small
                         label="boom"
