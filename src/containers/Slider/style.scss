@@ -38,10 +38,6 @@
                 min-width: 0;
                 color: $primary;
             }
-            &--hide {
-                opacity: 0;
-                z-index: -1;
-            }
         }
         &__description {
             left: 0;

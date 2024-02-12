@@ -6,7 +6,7 @@ import './style.scss'
 const Modal = ({ opened, Content, children }) => {
     const [isOpened, setIsOpened] = useState(opened)
     useEffect(() => {
-        setIsOpened(opened) // Mettre à jour l'état isOpened lorsque la prop opened change
+        setIsOpened(opened)
     }, [opened])
     return (
         <>
