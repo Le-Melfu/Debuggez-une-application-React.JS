@@ -13,10 +13,6 @@ const Slider = () => {
           )
         : []
 
-    const handleChange = (radioIdx) => {
-        setIndex(radioIdx)
-    }
-
     const nextCard = () => {
         setTimeout(
             () =>
@@ -59,7 +55,6 @@ const Slider = () => {
                             type="radio"
                             name="radio-button"
                             checked={index === radioIdx}
-                            onChange={() => handleChange(radioIdx)}
                         />
                     ))}
                 </div>
