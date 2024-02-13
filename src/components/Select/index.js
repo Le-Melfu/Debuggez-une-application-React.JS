@@ -15,10 +15,10 @@ const Select = ({
 }) => {
     const [value, setValue] = useState()
     const [collapsed, setCollapsed] = useState(true)
-    const changeValue = (newValue) => {
+    const changeValue = (newValue, bool) => {
         onChange(newValue)
         setValue(newValue)
-        setCollapsed(newValue)
+        setCollapsed(bool)
     }
     return (
         <div className={`SelectContainer ${type}`} data-testid="select-testid">
@@ -37,7 +37,7 @@ const Select = ({
                     {!collapsed && (
                         <>
                             {!titleEmpty && (
-                                <li onClick={() => changeValue(null)}>
+                                <li onClick={() => changeValue(null, true)}>
                                     <input
                                         defaultChecked={!value}
                                         name="selected"
@@ -47,7 +47,10 @@ const Select = ({
                                 </li>
                             )}
                             {selection.map((s) => (
-                                <li key={s} onClick={() => changeValue(s)}>
+                                <li
+                                    key={s}
+                                    onClick={() => changeValue(s, true)}
+                                >
                                     <input
                                         defaultChecked={value === s}
                                         name="selected"

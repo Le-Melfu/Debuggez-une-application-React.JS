@@ -44,7 +44,9 @@ const EventList = () => {
                     <h3 className="SelectTitle">Catégories</h3>
                     <Select
                         selection={Array.from(typeList)}
-                        onChange={changeType}
+                        onChange={(value) =>
+                            value ? changeType(value) : changeType(null)
+                        }
                     />
                     <div id="events" className="ListContainer">
                         {filteredEvents.map((event) => (
