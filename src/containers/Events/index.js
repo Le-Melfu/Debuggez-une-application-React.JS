@@ -28,9 +28,9 @@ const EventList = () => {
 
         return false
     })
-    const changeType = (value) => {
+    const changeType = (evtType) => {
         setCurrentPage(1)
-        setType(value)
+        setType(evtType)
     }
     const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1
     const typeList = new Set(data?.events.map((event) => event.type))

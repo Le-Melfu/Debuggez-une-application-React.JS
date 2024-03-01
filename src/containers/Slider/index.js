@@ -30,7 +30,7 @@ const Slider = () => {
     return (
         <div className="SlideCardList">
             {byDateDesc?.map((event, idx) => (
-                <div key={`${event.title}-${event.date}`}>
+                <div key={`${event.title}`}>
                     <div
                         className={`SlideCard SlideCard--${
                             index === idx ? 'display' : 'hide'

@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Icon from '../../components/Icon'
 import './style.scss'
 
 const Modal = ({ opened, Content, children }) => {
     const [isOpened, setIsOpened] = useState(opened)
-    useEffect(() => {
-        setIsOpened(opened)
-    }, [opened])
     return (
         <>
             {children({ isOpened, setIsOpened })}
