@@ -103,7 +103,7 @@ describe('When a page is created', () => {
                 ],
             },
         ]
-        const lastEvent = events.pop()
+        const lastEvent = events[events.length - 1]
         const { container } = render(
             <EventCard
                 imageSrc={lastEvent?.cover ? lastEvent.cover : '../../logo.svg'}
@@ -114,6 +114,6 @@ describe('When a page is created', () => {
             />
         )
         const eventCardTitle = container.querySelector('.EventCard__title')
-        expect(eventCardTitle.textContent).toBe(lastEvent.title)
+        expect(eventCardTitle.textContent).toBe('Conférence &co-responsable')
     })
 })
