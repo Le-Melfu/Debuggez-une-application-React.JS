@@ -14,7 +14,7 @@ import { useData } from '../../contexts/DataContext'
 
 const Page = () => {
     const { data } = useData()
-    const last = data?.events.pop()
+    const last = data?.events[data.events.length - 1]
 
     return (
         <>
