@@ -24,27 +24,15 @@ const Field = ({
                     name={name}
                     placeholder={placeholder}
                     data-testid="field-testid"
-                    onChange={(e) => onChange && onChange(e.target.value)}
                 />
             )
             break
         case FIELD_TYPES.TEXTAREA:
-            component = (
-                <textarea
-                    name={name}
-                    data-testid="field-testid"
-                    onChange={(e) => onChange && onChange(e.target.value)}
-                />
-            )
+            component = <textarea name={name} data-testid="field-testid" />
             break
         case FIELD_TYPES.INPUT_EMAIL:
             component = (
-                <input
-                    type="email"
-                    name={name}
-                    data-testid="field-testid"
-                    onChange={(e) => onChange && onChange(e.target.value)}
-                />
+                <input type="email" name={name} data-testid="field-testid" />
             )
             break
         default:
