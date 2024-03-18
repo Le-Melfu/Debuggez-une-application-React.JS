@@ -8,13 +8,7 @@ export const FIELD_TYPES = {
     INPUT_EMAIL: 3,
 }
 
-const Field = ({
-    type = FIELD_TYPES.INPUT_TEXT,
-    label,
-    name,
-    placeholder,
-    onChange,
-}) => {
+const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
     let component
     switch (type) {
         case FIELD_TYPES.INPUT_TEXT:
@@ -58,14 +52,12 @@ Field.propTypes = {
     name: PropTypes.string,
     label: PropTypes.string,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func,
 }
 Field.defaultProps = {
     label: '',
     placeholder: '',
     type: FIELD_TYPES.INPUT_TEXT,
     name: 'field-name',
-    onChange: '',
 }
 
 export default Field
