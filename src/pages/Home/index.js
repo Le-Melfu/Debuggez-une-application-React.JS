@@ -14,7 +14,12 @@ import { useData } from '../../contexts/DataContext'
 
 const Page = () => {
     const { data } = useData()
-    const last = data?.events[data.events.length - 1]
+    const byDateOrder = data?.events
+        ? data?.events.sort((evtA, evtB) =>
+              new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
+          )
+        : []
+    const last = byDateOrder[0]
 
     return (
         <>
@@ -26,7 +31,9 @@ const Page = () => {
                     <Slider />
                 </section>
                 <section className="ServicesContainer">
-                    <h2 className="Title">Nos services</h2>
+                    <h2 className="Title" id="nos-services">
+                        Nos services
+                    </h2>
                     <p>
                         Nous organisons des événements sur mesure partout dans
                         le monde
@@ -61,11 +68,15 @@ const Page = () => {
                     </div>
                 </section>
                 <section className="EventsContainer">
-                    <h2 className="Title">Nos réalisations</h2>
+                    <h2 className="Title" id="nos-realisations">
+                        Nos réalisations
+                    </h2>
                     <EventList />
                 </section>
                 <section className="PeoplesContainer">
-                    <h2 className="Title">Notre équipe</h2>
+                    <h2 className="Title" id="notre-equipe">
+                        Notre équipe
+                    </h2>
                     <p>
                         Une équipe d’experts dédiés à l’ogranisation de vos
                         événements
